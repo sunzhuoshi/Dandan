@@ -1,0 +1,11 @@
+
+.DS_Store
+
+Dandan.xcodeproj/project.xcworkspace/xcuserdata
+
+*.mode1v3
+
+*.pbxuser
+
+Dandan.xcodeproj/xcuserdata/
+Dandan/tmp/
