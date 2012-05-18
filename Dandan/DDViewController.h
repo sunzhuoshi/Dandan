@@ -10,14 +10,18 @@
 
 @interface DDViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImage *_maskImage;
+    UIImage *_originalLeftImage;    
     UIImage *_originalRightImage;
+    UIButton *_currentPhotoButton;
+    BOOL _handled;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *leftImageView;
-@property (nonatomic, retain) IBOutlet UIImageView *rightImageView;
+@property (nonatomic, retain) IBOutlet UIButton *leftButton;
+@property (nonatomic, retain) IBOutlet UIButton *rightButton;
 
 - (IBAction)doAboutButtonTouchUpInside:(id)sender;
 - (IBAction)doActionButtonTouchUpInside:(id)sender;
+- (IBAction)doPhotoButtonTouchUpInside:(id)sender;
 - (IBAction)doSaveButtonTouchUpInside:(id)sender;
 
 @end

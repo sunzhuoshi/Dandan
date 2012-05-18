@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650871E6153F2CDD0023AD8F /* Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 650871E5153F2CDD0023AD8F /* Left.png */; };
+		650871E8153F2DF30023AD8F /* Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 650871E7153F2DF30023AD8F /* Right.png */; };
 		654EC5131527D7E000D76E39 /* DDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654EC5111527D7E000D76E39 /* DDViewController.xib */; };
 		654EC5141527D7E000D76E39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 654EC5121527D7E000D76E39 /* InfoPlist.strings */; };
 		6580265B1523948700C9BE70 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658026591523947C00C9BE70 /* MobileCoreServices.framework */; };
@@ -20,15 +22,15 @@
 		65E819691523875800262A2E /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E819681523875800262A2E /* DDViewController.m */; };
 		65E8197C152387D700262A2E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81972152387D700262A2E /* Default.png */; };
 		65E8197D152387D700262A2E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81973152387D700262A2E /* Default@2x.png */; };
-		65E8197E152387D700262A2E /* fang.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81974152387D700262A2E /* fang.png */; };
 		65E81980152387D700262A2E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81976152387D700262A2E /* Icon.png */; };
 		65E81981152387D700262A2E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81977152387D700262A2E /* Icon@2x.png */; };
-		65E81982152387D700262A2E /* laoluo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81978152387D700262A2E /* laoluo.png */; };
 		65E81983152387D700262A2E /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E81979152387D700262A2E /* mask.png */; };
 		65E81985152387D700262A2E /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 65E8197B152387D700262A2E /* iTunesArtwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650871E5153F2CDD0023AD8F /* Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Left.png; sourceTree = "<group>"; };
+		650871E7153F2DF30023AD8F /* Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Right.png; sourceTree = "<group>"; };
 		654EC5111527D7E000D76E39 /* DDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDViewController.xib; sourceTree = "<group>"; };
 		654EC5121527D7E000D76E39 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		658026591523947C00C9BE70 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -48,10 +50,8 @@
 		65E819681523875800262A2E /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
 		65E81972152387D700262A2E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		65E81973152387D700262A2E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		65E81974152387D700262A2E /* fang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fang.png; sourceTree = "<group>"; };
 		65E81976152387D700262A2E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		65E81977152387D700262A2E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		65E81978152387D700262A2E /* laoluo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laoluo.png; sourceTree = "<group>"; };
 		65E81979152387D700262A2E /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		65E8197B152387D700262A2E /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,14 +117,14 @@
 		65E8195C1523875800262A2E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				650871E7153F2DF30023AD8F /* Right.png */,
+				650871E5153F2CDD0023AD8F /* Left.png */,
 				654EC5111527D7E000D76E39 /* DDViewController.xib */,
 				654EC5121527D7E000D76E39 /* InfoPlist.strings */,
 				65E81972152387D700262A2E /* Default.png */,
 				65E81973152387D700262A2E /* Default@2x.png */,
-				65E81974152387D700262A2E /* fang.png */,
 				65E81976152387D700262A2E /* Icon.png */,
 				65E81977152387D700262A2E /* Icon@2x.png */,
-				65E81978152387D700262A2E /* laoluo.png */,
 				65E81979152387D700262A2E /* mask.png */,
 				65E8197B152387D700262A2E /* iTunesArtwork */,
 				65E8195D1523875800262A2E /* Dandan-Info.plist */,
@@ -160,7 +160,7 @@
 		65E819481523875700262A2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = Intel;
 			};
 			buildConfigurationList = 65E8194B1523875700262A2E /* Build configuration list for PBXProject "Dandan" */;
@@ -188,15 +188,15 @@
 			files = (
 				65E8197C152387D700262A2E /* Default.png in Resources */,
 				65E8197D152387D700262A2E /* Default@2x.png in Resources */,
-				65E8197E152387D700262A2E /* fang.png in Resources */,
 				65E81980152387D700262A2E /* Icon.png in Resources */,
 				65E81981152387D700262A2E /* Icon@2x.png in Resources */,
-				65E81982152387D700262A2E /* laoluo.png in Resources */,
 				65E81983152387D700262A2E /* mask.png in Resources */,
 				65E81985152387D700262A2E /* iTunesArtwork in Resources */,
 				6580266D1524D0F800C9BE70 /* DDAboutViewController.xib in Resources */,
 				654EC5131527D7E000D76E39 /* DDViewController.xib in Resources */,
 				654EC5141527D7E000D76E39 /* InfoPlist.strings in Resources */,
+				650871E6153F2CDD0023AD8F /* Left.png in Resources */,
+				650871E8153F2DF30023AD8F /* Right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +349,8 @@
 					"\"$(SRCROOT)/../XCraft/common/MGSCommon/dep/lib\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "EFE860B6-0314-4649-AD0D-E3F562C99139";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EFE860B6-0314-4649-AD0D-E3F562C99139";
+				PROVISIONING_PROFILE = "D7130D7F-CE54-4A5A-85C6-ACEA43E3F096";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D7130D7F-CE54-4A5A-85C6-ACEA43E3F096";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -15,7 +15,7 @@
 }
 
 - (IBAction)doAuthorTextViewTouchUpInside:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.weibo.com/sunzhuoshi"]];
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.weibo.com/sunzhuoshi"]];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
