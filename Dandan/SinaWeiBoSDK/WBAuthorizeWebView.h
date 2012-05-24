@@ -39,6 +39,8 @@
 
 @property (nonatomic, assign) id<WBAuthorizeWebViewDelegate> delegate;
 
+@property (nonatomic, assign) id<UIWebViewDelegate> webViewDelegate;
+
 - (void)loadRequestWithURL:(NSURL *)url;
 
 - (void)show:(BOOL)animated;
@@ -46,3 +48,5 @@
 - (void)hide:(BOOL)animated;
 
 @end
+
+extern NSString *WBAuthorizWebViewDidHideNotification;

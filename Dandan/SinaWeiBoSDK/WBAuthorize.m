@@ -38,6 +38,7 @@
 @synthesize request;
 @synthesize rootViewController;
 @synthesize delegate;
+@synthesize authorizeWebViewDelegate;
 
 #pragma mark - WBAuthorize Life Circle
 
@@ -123,13 +124,15 @@
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:appKey, @"client_id",
                                                                       @"code", @"response_type",
                                                                       redirectURI, @"redirect_uri", 
-                                                                      @"mobile", @"display", nil];
+                                                                      @"mobile", @"display",
+                                                                      @"true", @"forcelogin", nil];
     NSString *urlString = [WBRequest serializeURL:kWBAuthorizeURL
                                            params:params
                                        httpMethod:@"GET"];
     
     WBAuthorizeWebView *webView = [[WBAuthorizeWebView alloc] init];
     [webView setDelegate:self];
+    [webView setWebViewDelegate:authorizeWebViewDelegate];
     [webView loadRequestWithURL:[NSURL URLWithString:urlString]];
     [webView show:YES];
     [webView release];

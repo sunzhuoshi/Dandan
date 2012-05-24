@@ -147,6 +147,7 @@
     WBAuthorize *auth = [[WBAuthorize alloc] initWithAppKey:appKey appSecret:appSecret];
     [auth setRootViewController:rootViewController];
     [auth setDelegate:self];
+    [auth setAuthorizeWebViewDelegate:self];
     self.authorize = auth;
     [auth release];
     
@@ -334,6 +335,26 @@
     {
         [delegate engine:self requestDidFailWithError:error];
     }
+}
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    if ([delegate respondsToSelector:@selector(engine:authorizeWebViewDidStartLoad:)]) {
+        [delegate engine:self authorizeWebViewDidStartLoad:webView];
+    }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if ([delegate respondsToSelector:@selector(engine:authorizeWebViewDidFinishLoad:)]) {
+        [delegate engine:self authorizeWebViewDidFinishLoad:webView];
+    }    
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    if ([delegate respondsToSelector:@selector(engine:authorizeWebViewDidFailLoadWithError:error:)]) {
+        [delegate engine:self authorizeWebViewDidFailLoadWithError:webView error:error];
+    }    
 }
 
 @end

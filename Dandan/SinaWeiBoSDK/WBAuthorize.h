@@ -53,6 +53,7 @@
 @property (nonatomic, retain) WBRequest *request;
 @property (nonatomic, assign) UIViewController *rootViewController;
 @property (nonatomic, assign) id<WBAuthorizeDelegate> delegate;
+@property (nonatomic, assign) id<UIWebViewDelegate> authorizeWebViewDelegate;
 
 - (id)initWithAppKey:(NSString *)theAppKey appSecret:(NSString *)theAppSecret;
 

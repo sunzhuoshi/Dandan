@@ -53,9 +53,14 @@
 - (void)engine:(WBEngine *)engine requestDidFailWithError:(NSError *)error;
 - (void)engine:(WBEngine *)engine requestDidSucceedWithResult:(id)result;
 
+#pragma mark - sunzhuoshi's extension
+- (void)engine:(WBEngine *)engine authorizeWebViewDidStartLoad:(UIWebView *)webView;
+- (void)engine:(WBEngine *)engine authorizeWebViewDidFinishLoad:(UIWebView *)webView;
+- (void)engine:(WBEngine *)engine authorizeWebViewDidFailLoadWithError:(UIWebView *)webView error:(NSError *)error;
+
 @end
 
-@interface WBEngine : NSObject <WBAuthorizeDelegate, WBRequestDelegate>
+@interface WBEngine : NSObject <WBAuthorizeDelegate, WBRequestDelegate, UIWebViewDelegate>
 {
     NSString        *appKey;
     NSString        *appSecret;
@@ -126,3 +131,6 @@
 - (void)sendWeiBoWithText:(NSString *)text image:(UIImage *)image;
 
 @end
+
+extern NSString *WBAuthorizWebViewDidHideNotification;
+

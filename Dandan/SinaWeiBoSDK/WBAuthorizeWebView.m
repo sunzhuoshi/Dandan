@@ -18,6 +18,8 @@
 #import "WBAuthorizeWebView.h"
 #import <QuartzCore/QuartzCore.h> 
 
+NSString *WBAuthorizWebViewDidHideNotification = @"WBAuthorizWebViewDidHideNotification";
+
 @interface WBAuthorizeWebView (Private)
 
 - (void)bounceOutAnimationStopped;
@@ -38,6 +40,7 @@
 @implementation WBAuthorizeWebView
 
 @synthesize delegate;
+@synthesize webViewDelegate;
 
 #pragma mark - WBAuthorizeWebView Life Circle
 
@@ -102,26 +105,31 @@
 
 - (void)sizeToFitOrientation:(UIInterfaceOrientation)orientation
 {
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat outMargin = 10.0f;
+    CGFloat inMargin = 10.0f;
+    
     [self setTransform:CGAffineTransformIdentity];
     
     if (UIInterfaceOrientationIsLandscape(orientation))
     {
-        [self setFrame:CGRectMake(0, 0, 480, 320)];
-        [panelView setFrame:CGRectMake(10, 30, 460, 280)];
-        [containerView setFrame:CGRectMake(10, 10, 440, 260)];
-        [webView setFrame:CGRectMake(0, 0, 440, 260)];
-        [indicatorView setCenter:CGPointMake(240, 160)];
+        [self setFrame:CGRectMake(0, 0, screenHeight, screenWidth)];
+        [panelView setFrame:CGRectMake(outMargin, outMargin, screenHeight-outMargin*2, screenWidth-outMargin*2)];        
+        [containerView setFrame:CGRectMake(outMargin, outMargin, screenHeight-outMargin*2-inMargin*2, screenWidth-outMargin*2-inMargin*2)];
+        [webView setFrame:CGRectMake(0, 0, screenHeight-outMargin*2-inMargin*2, screenWidth-outMargin*2-inMargin*2)];
+        [indicatorView setCenter:CGPointMake([UIScreen mainScreen].bounds.size.height/2, [UIScreen mainScreen].bounds.size.width/2)];                
     }
     else
     {
-        [self setFrame:CGRectMake(0, 0, 320, 480)];
-        [panelView setFrame:CGRectMake(10, 30, 300, 440)];
-        [containerView setFrame:CGRectMake(10, 10, 280, 420)];
-        [webView setFrame:CGRectMake(0, 0, 280, 420)];
-        [indicatorView setCenter:CGPointMake(160, 240)];
+        [self setFrame:[UIScreen mainScreen].bounds];
+        [panelView setFrame:CGRectMake(outMargin, outMargin, screenWidth-outMargin*2, screenHeight-outMargin*2)];
+        [containerView setFrame:CGRectMake(outMargin, outMargin, screenWidth-outMargin*2-inMargin*2, screenHeight-outMargin*2-inMargin*2)];
+        [webView setFrame:CGRectMake(0, 0, screenWidth-outMargin*2-inMargin*2, screenHeight-outMargin*2-inMargin*2)];
+        [indicatorView setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];        
     }
     
-    [self setCenter:CGPointMake(160, 240)];
+    [self setCenter:CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2)];
     
     [self setTransform:[self transformForOrientation:orientation]];
     
@@ -220,6 +228,7 @@
 {
     [self removeObservers];
 	[self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:WBAuthorizWebViewDidHideNotification object:self];
 }
 
 #pragma mark - WBAuthorizeWebView Public Methods
@@ -300,16 +309,29 @@
 - (void)webViewDidStartLoad:(UIWebView *)aWebView
 {
 	[indicatorView startAnimating];
+    if ([webViewDelegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+        [webViewDelegate webViewDidStartLoad:aWebView];
+    }
+    webView.hidden = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
 	[indicatorView stopAnimating];
+    if ([webViewDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+        [webViewDelegate webViewDidFinishLoad:aWebView];
+    }
+    webView.hidden = NO;    
 }
 
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error
 {
     [indicatorView stopAnimating];
+    if ([webViewDelegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
+        [webViewDelegate webView:aWebView didFailLoadWithError:error];
+    }
+    webView.hidden = NO;
+    [self hide:YES];
 }
 
 - (BOOL)webView:(UIWebView *)aWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
