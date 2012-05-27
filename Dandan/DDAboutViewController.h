@@ -10,7 +10,11 @@
 
 @interface DDAboutViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UISwitch *bindSinaWeiboSwitch;
+@property (nonatomic, retain) IBOutlet UILabel *versionLabel;
+
 - (IBAction)doBackBarButtonItemAction:(id)sender;
-- (IBAction)doAuthorTextViewTouchUpInside:(id)sender;
+- (IBAction)doLaoluoButtonTouchUpInside:(id)sender;
+- (IBAction)doBindSinaWeiboSwitchValueChanged:(id)sender;
 
 @end
