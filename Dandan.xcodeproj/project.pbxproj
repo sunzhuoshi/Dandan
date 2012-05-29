@@ -50,6 +50,7 @@
 		6580265B1523948700C9BE70 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658026591523947C00C9BE70 /* MobileCoreServices.framework */; };
 		6580266C1524D0F800C9BE70 /* DDAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580266A1524D0F800C9BE70 /* DDAboutViewController.m */; };
 		6580266D1524D0F800C9BE70 /* DDAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6580266B1524D0F800C9BE70 /* DDAboutViewController.xib */; };
+		65E40E33157482FA00E17BAA /* grayscale.js in Resources */ = {isa = PBXBuildFile; fileRef = 650C375B156EA46B00CF5228 /* grayscale.js */; };
 		65E819561523875800262A2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E819551523875800262A2E /* UIKit.framework */; };
 		65E819581523875800262A2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E819571523875800262A2E /* Foundation.framework */; };
 		65E8195A1523875800262A2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E819591523875800262A2E /* CoreGraphics.framework */; };
@@ -391,6 +392,7 @@
 			files = (
 				65E8197C152387D700262A2E /* Default.png in Resources */,
 				65E8197D152387D700262A2E /* Default@2x.png in Resources */,
+				65E40E33157482FA00E17BAA /* grayscale.js in Resources */,
 				65E81980152387D700262A2E /* Icon.png in Resources */,
 				65E81981152387D700262A2E /* Icon@2x.png in Resources */,
 				65E81983152387D700262A2E /* Mask.png in Resources */,
